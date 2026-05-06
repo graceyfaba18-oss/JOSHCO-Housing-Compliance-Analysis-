@@ -1,4 +1,4 @@
-# Project 3 — JOSHCO (Johannesburg Social Housing Company)
+# JOSHCO (Johannesburg Social Housing Company)
 ## Social Housing Delivery and Compliance Analysis
 
 **Author:** Gracey F.
