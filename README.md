@@ -1,4 +1,4 @@
-# JOSHCO (Johannesburg Social Housing Company)
+JOSHCO (Johannesburg Social Housing Company)
 ## Social Housing Delivery and Compliance Analysis
 
 **Author:** Gracey F.
@@ -13,6 +13,30 @@
 JOSHCO is the Johannesburg Social Housing Company, a City of Johannesburg entity responsible for delivering and managing affordable rental housing for low to medium income households. I completed a compliance internship at JOSHCO where I worked on tender documents, procurement compliance reports, and regulatory submissions.
 
 This project analyses housing delivery performance and budget expenditure compliance across financial years 2019/20 to 2023/24, using real figures from Department of Human Settlements Annual Performance Reports. The analysis is directly relevant to the compliance reporting work I performed during my internship.
+
+---
+
+## Business Model Canvas Context
+
+Understanding JOSHCO through the Business Model Canvas framework reveals why compliance data matters beyond just numbers.
+
+**Value Proposition**
+JOSHCO's core value proposition is delivering safe, affordable rental housing to households earning between R1 500 and R15 000 per month — a segment that is priced out of the private rental market but does not qualify for fully subsidised RDP housing. Every unit delivered is a direct fulfilment of this promise.
+
+**Customer Segments**
+JOSHCO serves two distinct segments: low income tenants who need subsidised rental units, and the City of Johannesburg as a funding and accountability partner. The compliance data in this project speaks directly to the second segment — the city measures JOSHCO's performance against annual delivery and expenditure targets.
+
+**Key Activities**
+JOSHCO's key activities are property development, tenant management, and regulatory compliance. The SQL queries in this project analyse the compliance activity directly — tracking delivery rates, budget utilisation, and whether programmes meet the thresholds set by the Department of Human Settlements.
+
+**Revenue Streams**
+JOSHCO is funded through a combination of government grants, tenant rentals, and Social Housing Regulatory Authority (SHRA) subsidies. Underspending on budget — as seen in the 2020/21 COVID year — risks clawback of unspent grant funds, making expenditure compliance a financial risk, not just an administrative one.
+
+**Key Partnerships**
+The Department of Human Settlements, SHRA, the Housing Development Agency, and the City of Johannesburg are all key partners. Non-compliance with delivery targets triggers formal intervention from these bodies — exactly the kind of risk this analysis helps identify early.
+
+**Data Analysis Connection**
+The finding that Social Housing delivery in Gauteng fell to 56% of its planned target in 2020/21 is not just a statistic — within the BMC framework it represents a direct failure to deliver on the value proposition, a risk to revenue streams from grant funding, and a compliance trigger with key partners. This is the kind of insight that turns data into business decisions.
 
 ---
 
@@ -52,13 +76,41 @@ project3_joshco/
 
 ---
 
+## Database Schema
+
+### Table 1: housing_delivery
+| Column | Description |
+|---|---|
+| financial_year | SA government financial year (e.g. 2023/24) |
+| province | Province where units were delivered |
+| programme | Social Housing, Community Rental Units, FLISP Subsidies |
+| units_planned | Annual delivery target |
+| units_delivered | Actual units completed |
+| delivery_rate_pct | Delivery as a percentage of planned |
+| beneficiaries | Number of households benefiting |
+| compliance_status | Compliant, Partial Compliance, or Non-Compliant |
+
+### Table 2: budget_expenditure
+| Column | Description |
+|---|---|
+| financial_year | SA government financial year |
+| programme | Budget programme name |
+| budget_R_million | Approved budget in R millions |
+| actual_R_million | Actual expenditure in R millions |
+| variance_R_million | Difference between budget and actual |
+| expenditure_pct | Actual as a percentage of budget |
+| compliance_flag | Compliant, Within Threshold, or Non-Compliant |
+
+---
+
 ## How to Run the SQL Queries
 
-1. Install DB Browser for SQLite: https://sqlitebrowser.org/dl/
-2. Open joshco_housing.db
-3. Click Execute SQL tab
-4. Copy any query from joshco_queries.sql and paste
-5. Press F5 to run
+1. Install DB Browser for SQLite: `https://sqlitebrowser.org/dl/`
+2. Click Open Database and select `joshco_housing.db`
+3. Click the Execute SQL tab
+4. Open `joshco_queries.sql` in Notepad
+5. Copy any query and paste into DB Browser
+6. Press F5 to run
 
 ---
 
